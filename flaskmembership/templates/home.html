@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if current_user %}
+<div class="content-section">
+    <legend class="border-bottom mb-4">Member Information</legend>
+    <img class="QR-code-img" src="https://api.qrserver.com/v1/create-qr-code/?data={{ current_user.username }}&amp;size=100x100">
+</div>
+{% else %}
+<div class="content-section">
+    <legend class="border-bottom mb-4">Are you currently a member?</legend>
+    <p>Login or Create an account!</p>
+</div>
+{% endif %}
+{% endblock content %}
