@@ -15,10 +15,10 @@ users = Blueprint('users', __name__)
 @users.route("/")
 @users.route("/home")
 def home():
-    name = ""
+    user_id=""
     if current_user.is_authenticated:
-        name = current_user.username
-    return render_template('home.html', name=name)
+        user_id = current_user.id
+    return render_template('home.html', user_id=user_id)
 
 
 @users.route("/register", methods=['GET', 'POST'])
